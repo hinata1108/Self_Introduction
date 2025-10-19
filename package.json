@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage":"https://hinata1108.github.io/self_introduction/",
+  "homepage":"https://hinata1108.github.io/Self_introduction/",
 
   "scripts": {
     "dev": "vite",
