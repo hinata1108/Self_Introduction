@@ -3,13 +3,14 @@ import { useEffect, useRef, useState} from 'react';
 
 
 export default function Experience (){
-const ref =useRef();    
+const ref =useRef<HTMLDivElement>(null);    
     const [visible, setVisible] = useState(false);
     useEffect(() => {
         const observer = new IntersectionObserver(([entry]) => {
                 if (entry.isIntersecting) setVisible(true);},
                 { threshold: 0.6 });
-        observer.observe(ref.current);
+        if (ref.current) {                    
+          observer.observe(ref.current);}
         return () => observer.disconnect();
         }, []);
 
