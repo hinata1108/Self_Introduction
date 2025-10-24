@@ -3,6 +3,8 @@ import Fish from './assets/fish.svg';
 import Picture from './assets/picture.svg';
 import Umiusi from './assets/umiusi.svg';
 import './main.css';
+import { Element } from 'react-scroll';
+
 
 
 export default function Hobby(){
@@ -14,13 +16,13 @@ export default function Hobby(){
    return(
 
 
-<div className="hobby">
+<Element className="hobby"  name="Hobby">
    <div className="hobby-name">趣味</div>
  <div className="hobby-image">
 {hobbies.concat(hobbies).concat(hobbies).map((Hobby) =>
   <img key={Hobby.key} src={Hobby.Image} alt={Hobby.Alt} width="400" height="400" />
 )}
  </div>
-</div>
+</Element>
    );
 }
