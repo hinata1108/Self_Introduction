@@ -1,4 +1,5 @@
 import './main.css';
+import {Link} from 'react-scroll'
 
 export default function Header() {
   return (
@@ -6,10 +7,10 @@ export default function Header() {
     <p>About Me</p>
     <nav >
         <ul className="nav">
-            <li><a href="/Introdection">自己紹介</a></li>
-            <li><a href="/Result">経歴</a></li>
-            <li><a href="/Hobby">趣味</a></li>
-            <li><a href="/Activity">連絡先</a></li>
+            <li><Link to="Introduction" smooth={true} duration={500} offset={-80}  onClick={() => console.log('リンク押された！')}>自己紹介</Link></li>
+            <li><Link to="Experience" smooth={true} duration={500} offset={-80}>経歴</Link></li>
+            <li><Link to="Hobby" smooth={true} duration={500} offset={-80}>趣味</Link></li>
+            {/* <li><a href="/Activity">連絡先</a></li> */}
         </ul>
     </nav>
 </header>

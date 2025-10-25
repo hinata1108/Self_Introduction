@@ -1,6 +1,6 @@
 import './main.css';
 import { useEffect, useRef, useState} from 'react';
-
+import { Element } from 'react-scroll';
 
 export default function Experience (){
 const ref =useRef<HTMLDivElement>(null);    
@@ -15,7 +15,8 @@ const ref =useRef<HTMLDivElement>(null);
         }, []);
 
      return(           
-<div ref={ref} className={`Experience ${visible ? 'visible' : ''}`}>
+<div ref={ref} >
+  <Element className={`Experience ${visible ? 'visible' : ''}`} name="Experience">
 
     <p>経歴</p>
     <div className="Experience_box">
@@ -23,6 +24,7 @@ const ref =useRef<HTMLDivElement>(null);
       <p>2024.4 名城大学入学</p>
       <p>2024.9 IdeaxTechに所属</p>
     </div>
+  </Element>
  </div>
 )
 }
