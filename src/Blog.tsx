@@ -5,7 +5,7 @@ import './main.css';
 export default function Blog() {
     // APIからデータ取得　データ保存と更新
     const [blogs, setBlogs] = useState([]);
-    const [loading, setLoading] = useState(true);
+    // const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         client.get({ endpoint: 'blog' })
@@ -13,9 +13,9 @@ export default function Blog() {
             console.log(res.contents);
             setBlogs(res.contents);}
             )
-        .finally(() => {
-            setLoading(false);
-        });
+        // .finally(() => {
+        //     setLoading(false);
+        // });
     },[]);
     // if (loading) {
     //     return <div>Loading...</div>;
