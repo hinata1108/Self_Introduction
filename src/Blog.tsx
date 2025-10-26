@@ -10,19 +10,22 @@ export default function Blog() {
     useEffect(() => {
         client.get({ endpoint: 'blog' })
         .then((res) => {
-            setBlogs(res.contents);})
+            console.log(res.contents);
+            setBlogs(res.contents);}
+            )
         .finally(() => {
             setLoading(false);
         });
     },[]);
-    if (loading) {
-        return <div>Loading...</div>;
-    } else if (!loading) { 
-        return <div>error</div>
+    // if (loading) {
+    //     return <div>Loading...</div>;
+    // } else if (!loading) { 
+    //     return <div>error</div>
 
    return (
     <div className="blog">
         <h2>ブログ</h2>
+       <div className="blog-cards">
       {blogs.map((blog:any) => (
         <div key={blog.id} className="blog-item">
             <h3>{blog.title}</h3>
@@ -30,7 +33,8 @@ export default function Blog() {
             <p>{blog.body}</p>
         </div>
       ))}
+        </div>
     </div>
     );
   }  
-    }
+    
